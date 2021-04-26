@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <p class="lead">Total recipes: <%= @recipes.total %> </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Calories</th>
+              <th>Description</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipes.each do |recipe| %>
+              <tr>
+                <td><%= recipe.fields[:title] %></td>
+                <td><%= recipe.fields[:calories] %></td>
+                <td><%= recipe.fields[:description].truncate(100) %></td>
+                <td><a href="<%= recipe_path(recipe.id) %>">Details</a></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
