@@ -1,0 +1,15 @@
+<div class="row pt-3">
+  <div class="col-md-10 mx-auto">
+    <div class="card">
+      <img src="<%= @recipe.photo.url %>" class="card-img-top" alt="recipe image">
+      <div class="card-body">
+        <h5 class="card-title"><%=@recipe.title %></h5>
+        <p class="card-text"><%= @recipe.description %> </p>
+        <%= render partial: 'tags', locals: { tags: @recipe.tags } %>
+      </div>
+      <div class="card-footer text-muted">
+        <a href="<%= recipes_path %>">Back</a>
+      </div>
+    </div>
+  </div>
+</div>
