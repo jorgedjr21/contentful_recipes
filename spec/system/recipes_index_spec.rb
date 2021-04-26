@@ -1,13 +1,15 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.describe "List of recipes", :type => :system do
+require 'rails_helper'
+
+RSpec.describe 'List of recipes', type: :system do
   before do
     driven_by(:rack_test)
   end
 
   context 'showing the recipes list' do
     before do
-      VCR.insert_cassette "list_recipes"
+      VCR.insert_cassette 'list_recipes'
       visit recipes_path
     end
 
